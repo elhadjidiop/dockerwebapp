@@ -1,0 +1,21 @@
+version: '2'
+services:
+  jenkins: 
+    images: 'elhadji/test_jenkins:0.0.1'
+    ports:
+      - '80:8080'
+      - '443:8443'
+      - '50000:50000'
+    environment:
+      - JENKINS_USERNAME=elhadji
+      - JENKINS_PASSWORD=test_jenkins
+    volumes:
+      - 'jenkins_data:/usr'
+      - '/var/run/dkcer.sock:/var/run/docker.sock'
+    expose:
+      - "22"
+      - "80"
+      - "8080"
+volumes:
+  jenkins_data:
+    driver: local
