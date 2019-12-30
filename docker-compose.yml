@@ -11,7 +11,7 @@ services:
       - JENKINS_PASSWORD=test_jenkins
     volumes:
       - 'jenkins_data:/usr'
-      - '/var/run/dkcer.sock:/var/run/docker.sock'
+      - '/var/run/docker.sock:/var/run/docker.sock'
     expose:
       - "22"
       - "80"
